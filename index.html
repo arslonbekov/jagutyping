@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jagu Typing — скорость печати</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid"></div><div class="spot"></div>
+<a class="brand" href="#" onclick="return false"><span>arslonbekov</span></a>
+
+<section class="screen on" id="home">
+  <h1><span class="row split">JAGU</span><span class="row split">TYPING</span></h1>
+  <p class="sub">Проверь скорость печати на русском. Выбери время, нажми «Старт» и покажи, на что способны твои пальцы.</p>
+  <div class="modes" id="modes">
+    <button class="btn mode" data-t="15"><b>15</b><i>секунд</i><small></small></button>
+    <button class="btn mode sel" data-t="60"><b>60</b><i>секунд</i><small></small></button>
+    <button class="btn mode" data-t="120"><b>120</b><i>секунд</i><small></small></button>
+  </div>
+  <button class="btn go" id="start"><span>Старт</span><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 1l10 6-10 6z" fill="currentColor"/></svg></button>
+</section>
+
+<section class="screen" id="test">
+  <div class="wrap">
+    <div class="hud">
+      <div><div class="lab">осталось, сек</div><div class="tm" id="tm">60</div></div>
+      <div class="side">
+        <div><div class="lab">сл/мин</div><b id="lw">0</b></div>
+        <div><div class="lab">точность</div><b id="la">100%</b></div>
+      </div>
+    </div>
+    <div class="barw"><div id="bar"></div></div>
+    <div class="words" id="words"><div class="inner" id="inner"></div></div>
+    <p class="hint">Печатай текст — таймер уже идёт. Esc — выйти.</p>
+  </div>
+</section>
+
+<section class="screen" id="res">
+  <div class="rk" id="rk" style="--i:0">Результат</div>
+  <div class="rwpm" id="rw" style="--i:1">0</div>
+  <div class="runit">слов в минуту</div>
+  <div class="nr" id="nr">Новый рекорд!</div>
+  <div class="cells">
+    <div class="cell" style="--i:3"><span>Точность</span><b id="ra">0%</b></div>
+    <div class="cell" style="--i:4"><span>Символы</span><b id="rc">0</b></div>
+    <div class="cell" style="--i:5"><span>Ошибки</span><b id="re">0</b></div>
+    <div class="cell" style="--i:6"><span>Рекорд</span><b id="rb">0</b></div>
+  </div>
+  <div class="acts">
+    <button class="btn alt solid" id="again">Ещё раз</button>
+    <button class="btn alt" id="change">Сменить время</button>
+  </div>
+</section>
+
+<div class="ov" id="ov"><p>ПРИГОТОВЬСЯ</p><div class="ring" id="ring"></div><div class="cn" id="cn">3</div></div>
+<textarea id="inp" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Поле ввода"></textarea>
+
+<script src="script.js"></script>
+</body>
+</html>
